@@ -24,6 +24,7 @@ char transfer_buffer[256];
 // Original WR File
 int OPEN_ORIGINAL(void);
 int CLOSE_ORIGINAL(void);
+int Get_Next_Line_ORIGINAL(char *m_buffer);
 int Read_ORIGINAL(int chars_to_read);
 FILE *fp_ORIGINAL;
 
@@ -37,7 +38,26 @@ FILE *fp_FORMATTED;
 void stitch_file_location(char *buffer_array, char *folder, char *file);
 void stitch_file_directories();
 
+// get_next_line: Retrieves the characters beginning at the original location of the fp
+//                and ending at the '\n' char.
+int get_next_line(FILE *fp, char *m_buffer_array);
 
+int get_next_line(FILE *fp, char *m_buffer_array)
+{
+    // Local Variable(s)
+    char temp_c = 'A';
+    unsigned int i=0;
+
+    while((temp_c!='\n')&&(temp_c!=EOF))
+    {
+        temp_c = fgetc(fp);
+        m_buffer_array[i] = temp_c;
+        i++;
+    }
+    i--;
+    m_buffer_array[i] = '\0';
+    return i;
+}
 
 // Function Bodies
 
@@ -76,7 +96,7 @@ int CREAT_FORMATTED(void)
 }
 
 // Open_Original: WR File
-int OPEN_ORIGINAL()
+int OPEN_ORIGINAL(void)
 {
     // Open File
     fp_ORIGINAL = fopen (Original_file_path, "r");
@@ -87,6 +107,11 @@ int OPEN_ORIGINAL()
 
     // If opened correctly
     return 0;
+}
+
+int Get_Next_Line_ORIGINAL(char *m_buffer)
+{
+    return get_next_line(fp_ORIGINAL, m_buffer);
 }
 
 int CLOSE_ORIGINAL()

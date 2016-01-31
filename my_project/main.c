@@ -7,21 +7,12 @@ int main()
     stage_1();
     stage_2();
 
-    get_next_line(fp_ORIGINAL);
-    printf("\n%s", transfer_buffer);
-    get_next_line(fp_ORIGINAL);
-    printf("\n%s", transfer_buffer);
-    get_next_line(fp_ORIGINAL);
-    printf("\n%s", transfer_buffer);
-    get_next_line(fp_ORIGINAL);
-    printf("\n%s", transfer_buffer);
-    get_next_line(fp_ORIGINAL);
-    printf("\n%s", transfer_buffer);
-    get_next_line(fp_ORIGINAL);
-    printf("\n%s", transfer_buffer);
-    get_next_line(fp_ORIGINAL);
-    printf("\n%s", transfer_buffer);
-    get_next_line(fp_ORIGINAL);
+    // Get Next Line
+    Get_Next_Line_ORIGINAL(transfer_buffer);
+
+    // Print String
+    printf("First Line: %s",transfer_buffer);
+
 
 //    find_string();
 
