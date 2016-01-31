@@ -29,13 +29,28 @@ void find_string()
     // Read first line of code
     read_line();
 
-    char test_string[256] = "WR";
+    char test_string[256] = "WR #: ";
+    int test_string_length = strlen(test_string);
+    printf("\nTest String Length: %d\n", test_string_length);
     char temp_data_buffer[50];
+
 
     char *p_char;
     p_char = strstr(transfer_buffer, test_string);
 
-    printf("\n p_char = %c", p_char[0]);
+    // if p_char is not null than the test_string exists
+
+    // String Span
+    char n_set[] ="1234567890";
+    int wr_string_span = 7;// = strspn(transfer_buffer, n_set);
+    printf("\nWR String Span: %d\n", wr_string_span);
+
+    // Copy over the charachters
+    strncpy(temp_data_buffer, p_char, test_string_length+wr_string_span);
+
+    printf("\nThis Should Work:\n%s\n",temp_data_buffer);
+
+    printf("\np_char = %c", p_char[0]);
 //    printf("\n p_char = %d", p_char[0]);
 //    printf("\n temp_data_buffer = %c",temp_data_buffer);
 //    printf("\n temp_data_buffer = %d",temp_data_buffer);
