@@ -7,19 +7,19 @@
 #include <string.h>
 
 // Array Declaration
-char root_path[256] = "C:/Users/Mario Osborn/Desktop/DUKE_FILES/";
+static char root_path[256] = "C:/Users/Mario Osborn/Desktop/DUKE_FILES/";
 char WR_Number[50];
-char transfer_buffer[256];
 
 // Original Folder and Path Name
-char Original_Folder[256] = "Originals/";
+static char Original_Folder[256] = "Originals/";
 char Original_file_path[256];
 
 // Formatted Folder and Path Name
-char Formatted_Folder[256] = "Formatted/";
+static char Formatted_Folder[256] = "Formatted/";
 char Formatted_file_path[256];
 
 // Function Prototypes
+char transfer_buffer[256];
 
 // Original WR File
 int OPEN_ORIGINAL(void);

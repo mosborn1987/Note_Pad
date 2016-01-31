@@ -5,15 +5,19 @@
 #include <file_handler.h>
 #include <User_Interface_Functions.h>
 
-/* Stage 3: Transfer and Format Data
+/* Stage 3: Obtain and Transfer WR Number and Revision Number
 */
 void stage_3(void);
 
 void stage_3(void)
 {
-    // Test Transfer
-    Read_ORIGINAL(30);
-    WRITE_FORMATTED();
+    // Get WR Number
+
+    // Transfer WR Number
+
+    // Get Revision Number
+
+    // Transfer Revision Number
 
 
 }
