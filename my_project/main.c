@@ -8,12 +8,19 @@ int main()
     stage_2();
 
     get_next_line(fp_ORIGINAL);
+    printf("\n%s", transfer_buffer);
     get_next_line(fp_ORIGINAL);
+    printf("\n%s", transfer_buffer);
     get_next_line(fp_ORIGINAL);
+    printf("\n%s", transfer_buffer);
     get_next_line(fp_ORIGINAL);
+    printf("\n%s", transfer_buffer);
     get_next_line(fp_ORIGINAL);
+    printf("\n%s", transfer_buffer);
     get_next_line(fp_ORIGINAL);
+    printf("\n%s", transfer_buffer);
     get_next_line(fp_ORIGINAL);
+    printf("\n%s", transfer_buffer);
     get_next_line(fp_ORIGINAL);
 
 //    find_string();

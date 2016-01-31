@@ -9,13 +9,12 @@ char temp_data_holder[256];
 long char_position = 5;
 long fp_position = 0;
 
+// get_next_line: Retrieves the characters beginning at the original location of the fp
+//                and ending at the '\n' char.
 int get_next_line(FILE *fp);
 int get_next_line(FILE *fp)
 {
-    // Clear Transfer Buffer
-    transfer_buffer[0] = '\0';
-
-    //
+    // Local Variable(s)
     char temp_c = 'A';
     unsigned int i=0;
 
@@ -27,22 +26,7 @@ int get_next_line(FILE *fp)
     }
     i--;
     transfer_buffer[i] = '\0';
-
-    static int j = 0;
-    j++;
-    printf("\nLine %d: Chars: %d: %s", j, (unsigned)i, transfer_buffer);
     return i;
-
-
-//
-//
-//    // Read in first line
-//    fread(transfer_buffer, 1, 39 , fp_ORIGINAL);
-//
-//    // Print Material
-//    printf("Material Read: %s\n", transfer_buffer);
-//
-
 
 }
 
