@@ -23,6 +23,7 @@ void clear_terminal(void)
 
 // Request WR Number from user
 void UI_Request_WR_Number(void)
+// TODO (Mario Osborn#1#): UI_Re_Request_WR_Number Not working.
 {
     // Clean array
     WR_Number[0] = '\0';
