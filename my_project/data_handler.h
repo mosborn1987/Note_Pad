@@ -1,12 +1,20 @@
 #ifndef DATA_HANDLER_H_INCLUDED
 #define DATA_HANDLER_H_INCLUDED
 
-#include <data_handler.h>
+#include <file_handler.h>
 
-char test_string[256] = "WR #: ";
+char test_string[256] = "WR";
 
-long char_position = 0;
+long char_position = 5;
 long fp_position = 0;
+
+void read_line(void);
+void read_line(void)
+{
+
+
+
+}
 
 void find_string();
 void find_string()
@@ -15,6 +23,8 @@ void find_string()
     char_position = strstr(fp_ORIGINAL, test_string);
 
     printf("\nChar_Position = %d", char_position);
+
+
 
     // Rewind the fp position
     rewind(fp_ORIGINAL);
@@ -31,8 +41,6 @@ void find_string()
     // Print Read material
     printf("\nData Read: %s", transfer_buffer);
 
-
-    // Test the following string against a passed value
 }
 
 
