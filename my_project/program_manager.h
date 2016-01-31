@@ -3,6 +3,7 @@
 
 // Included Libraries
 #include <file_handler.h>
+#include <data_handler.h>
 #include <User_Interface_Functions.h>
 
 /* Stage 3: Obtain and Transfer WR Number and Revision Number
@@ -12,6 +13,7 @@ void stage_3(void);
 void stage_3(void)
 {
     // Get WR Number
+    find_string(transfer_buffer);
 
     // Transfer WR Number
 

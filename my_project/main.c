@@ -7,18 +7,8 @@ int main()
     stage_1();
     stage_2();
 
-    // Get Next Line
-    Get_Next_Line_ORIGINAL(transfer_buffer);
-
-    // Print String
-    printf("First Line: %s",transfer_buffer);
-
-
-//    find_string();
-
-    // Stage 3 - Obtain and Transfer WR Number and Revision Number
-//    stage_3();
-
+    // Stage_3
+    stage_3();
 
     stage_clean_up();
 
