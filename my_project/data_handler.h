@@ -9,16 +9,39 @@ char temp_data_holder[256];
 long char_position = 5;
 long fp_position = 0;
 
-void read_line(void);
-void read_line(void)
+int get_next_line(FILE *fp);
+int get_next_line(FILE *fp)
 {
+    // Clear Transfer Buffer
     transfer_buffer[0] = '\0';
-    // Read in first line
-    fread(transfer_buffer, 1, 39 , fp_ORIGINAL);
 
-    // Print Material
-    printf("Material Read: %s\n", transfer_buffer);
+    //
+    char temp_c = 'A';
+    unsigned int i=0;
 
+    while((temp_c!='\n')&&(temp_c!=EOF))
+    {
+        temp_c = fgetc(fp);
+        transfer_buffer[i] = temp_c;
+        i++;
+    }
+    i--;
+    transfer_buffer[i] = '\0';
+
+    static int j = 0;
+    j++;
+    printf("\nLine %d: Chars: %d: %s", j, (unsigned)i, transfer_buffer);
+    return i;
+
+
+//
+//
+//    // Read in first line
+//    fread(transfer_buffer, 1, 39 , fp_ORIGINAL);
+//
+//    // Print Material
+//    printf("Material Read: %s\n", transfer_buffer);
+//
 
 
 }
@@ -27,7 +50,7 @@ void find_string();
 void find_string()
 {
     // Read first line of code
-    read_line();
+    get_next_line(fp_ORIGINAL);
 
     char test_string[256] = "WR #: ";
     int test_string_length = strlen(test_string);

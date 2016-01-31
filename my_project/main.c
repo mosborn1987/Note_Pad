@@ -7,8 +7,16 @@ int main()
     stage_1();
     stage_2();
 
-    find_string();
+    get_next_line(fp_ORIGINAL);
+    get_next_line(fp_ORIGINAL);
+    get_next_line(fp_ORIGINAL);
+    get_next_line(fp_ORIGINAL);
+    get_next_line(fp_ORIGINAL);
+    get_next_line(fp_ORIGINAL);
+    get_next_line(fp_ORIGINAL);
+    get_next_line(fp_ORIGINAL);
 
+//    find_string();
 
     // Stage 3 - Obtain and Transfer WR Number and Revision Number
 //    stage_3();
