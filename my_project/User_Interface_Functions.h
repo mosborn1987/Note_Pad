@@ -34,6 +34,9 @@ void UI_Request_WR_Number(void)
     // Scan In number
     scanf("%s", WR_Number);
 
+    // Clear Terminal Window
+    clear_terminal();
+
 }
 
 void UI_Re_Request_WR_Number(void)
