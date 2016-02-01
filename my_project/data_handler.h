@@ -27,6 +27,7 @@ int get_WR_number(char *mm_buffer);
 // Function Bodies
 int get_next_string_append(char *dst_array, char *src_array, char *char_set)
 {
+    // Find the span length
 
 }
 
@@ -41,9 +42,6 @@ int get_WR_number(char *mm_buffer)
     // Test String
     char test_string[256] = "WR #: ";
     int test_string_length = strlen(test_string);
-
-    // Buffer
-    char temp_data_buffer[50];
 
     // Point to location of string
     char *p_char;
