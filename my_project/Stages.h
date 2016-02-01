@@ -11,6 +11,7 @@ int  stage_manager(void);
 int  stage_1(void);
 int  stage_2(void);
 void stage_3(void);
+void stage_4(void);
 int  stage_clean_up(void);
 
 /* Stages */
@@ -23,8 +24,17 @@ int  stage_manager(void)
     // Stage_3: Transfer Criteria
     stage_3();
 
+
     stage_clean_up();
 }
+
+/* Stage 4: Transfer Engine
+*/
+void stage_4(void)
+{
+
+}
+
 /* Stage 3: Obtain and Transfer WR Number and Revision Number
 */
 void stage_3(void)

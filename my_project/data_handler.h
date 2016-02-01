@@ -7,6 +7,18 @@
 char temp_data_buffer[256];
 char temp_data_buffer_2[256];
 
+// Character Sets
+char number_set[] ="1234567890";
+char abc_set[] = "abcdefghijklmnopqrstuvwxyz";
+char ABC_set[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+char special_char_set[] = "(\/).";
+char char_collection[256];
+
+int get_next_string_apend(char *dst_array, char *src_array);
+int get_next_string(char *dst_array, char *src_array);
+int get_string_append(char *dst_array, char *src_array)
+int get_string()
+
 int get_WR_number(char *mm_buffer);
 int get_WR_number(char *mm_buffer)
 {
@@ -28,8 +40,7 @@ int get_WR_number(char *mm_buffer)
     p_char = strstr(mm_buffer, test_string);
 
     // String Span
-    char n_set[] ="1234567890";
-    int wr_string_span = strcspn(mm_buffer, n_set);
+    int wr_string_span = strcspn(mm_buffer, number_set);
 
     // Copy over the characters
     strncpy(mm_buffer, p_char+test_string_length, line_length-wr_string_span);
