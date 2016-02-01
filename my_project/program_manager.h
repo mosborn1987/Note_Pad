@@ -13,7 +13,8 @@ void stage_3(void);
 void stage_3(void)
 {
     // Get WR Number
-    find_string(transfer_buffer);
+    get_WR_number(transfer_buffer);
+//    printf("%s\n\n", transfer_buffer);
 
     // Transfer WR Number
 

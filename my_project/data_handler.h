@@ -3,16 +3,8 @@
 
 #include <file_handler.h>
 
-
-char temp_data_holder[256];
-
-long char_position = 5;
-long fp_position = 0;
-
-
-
-void find_string(char *mm_buffer);
-void find_string(char *mm_buffer)
+int get_WR_number(char *mm_buffer);
+int get_WR_number(char *mm_buffer)
 {
     // Rewind fp_ORIGINAL
 
@@ -22,35 +14,27 @@ void find_string(char *mm_buffer)
     // Test String
     char test_string[256] = "WR #: ";
     int test_string_length = strlen(test_string);
-    printf("\nTest String Length: %d\n", test_string_length);
+//    printf("\nTest String Length: %d\n", test_string_length);
 
     // Buffer
     char temp_data_buffer[50];
 
     // Point to location of string
     char *p_char;
-    p_char = strstr(transfer_buffer, test_string);
+    p_char = strstr(mm_buffer, test_string);
 
     // if p_char is not null than the test_string exists
 
     // String Span
     char n_set[] ="1234567890";
-    int wr_string_span = strcspn(transfer_buffer, n_set);
-    printf("\nWR String Span: %d\n", wr_string_span);
+    int wr_string_span = strcspn(mm_buffer, n_set);
 
-    // Copy over the charachters
-    strncpy(temp_data_buffer, p_char+test_string_length, line_length-wr_string_span);
-//    temp_data_buffer[line_length-wr_string_span] = '\0';
+    // Copy over the characters
+    strncpy(mm_buffer, p_char+test_string_length, line_length-wr_string_span);
 
-    printf("\nThis Should Work:\n%s",temp_data_buffer);
+    mm_buffer[line_length-wr_string_span] = '\0';
 
-    printf("\np_char = %c", p_char[0]);
-//    printf("\n p_char = %d", p_char[0]);
-//    printf("\n temp_data_buffer = %c",temp_data_buffer);
-//    printf("\n temp_data_buffer = %d",temp_data_buffer);
-
-    char temp_c = 'a';
-    int temp_i = 0;
+    return 0;
 
 }
 
