@@ -15,7 +15,7 @@ char special_char_set[] = "(\/).";
 char char_collection[256];
 
 /* Goes to the next collection(not separated by commas or '\n') of characters*/
-int get_next_string_apend(char *dst_array, char *src_array, char *char_set);
+int get_next_string_append(char *dst_array, char *src_array, char *char_set);
 int get_next_string(char *dst_array, char *src_array, char *char_set);
 
 // Seeks out a particular string
@@ -25,7 +25,7 @@ int get_string();
 int get_WR_number(char *mm_buffer);
 
 // Function Bodies
-int get_next_string_apend(char *dst_array, char *src_array, char *char_set)
+int get_next_string_append(char *dst_array, char *src_array, char *char_set)
 {
 
 }
