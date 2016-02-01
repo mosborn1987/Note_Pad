@@ -7,6 +7,7 @@ int get_WR_number(char *mm_buffer);
 int get_WR_number(char *mm_buffer)
 {
     // Rewind fp_ORIGINAL
+    rewind(fp_ORIGINAL);
 
     // Read first line of code
     int line_length = Get_Next_Line_ORIGINAL(mm_buffer);
@@ -14,7 +15,6 @@ int get_WR_number(char *mm_buffer)
     // Test String
     char test_string[256] = "WR #: ";
     int test_string_length = strlen(test_string);
-//    printf("\nTest String Length: %d\n", test_string_length);
 
     // Buffer
     char temp_data_buffer[50];
@@ -23,15 +23,12 @@ int get_WR_number(char *mm_buffer)
     char *p_char;
     p_char = strstr(mm_buffer, test_string);
 
-    // if p_char is not null than the test_string exists
-
     // String Span
     char n_set[] ="1234567890";
     int wr_string_span = strcspn(mm_buffer, n_set);
 
     // Copy over the characters
     strncpy(mm_buffer, p_char+test_string_length, line_length-wr_string_span);
-
     mm_buffer[line_length-wr_string_span] = '\0';
 
     return 0;
