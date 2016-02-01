@@ -19,19 +19,18 @@ static char Formatted_Folder[256] = "Formatted/";
 char Formatted_file_path[256];
 
 // Function Prototypes
-char transfer_buffer[256];
 
 // Original WR File
 int OPEN_ORIGINAL(void);
 int CLOSE_ORIGINAL(void);
 int Get_Next_Line_ORIGINAL(char *m_buffer);
-int Read_ORIGINAL(int chars_to_read);
+int Read_ORIGINAL(char *m_Array, int chars_to_read);
 FILE *fp_ORIGINAL;
 
 // Formatted WR File
 int CREAT_FORMATTED(void);
 int CLOSE_FORMATTED(void);
-int WRITE_FORMATTED(void);
+int WRITE_FORMATTED(char *m_array);
 FILE *fp_FORMATTED;
 
 // Stitch File Location
@@ -62,9 +61,9 @@ int get_next_line(FILE *fp, char *m_buffer_array)
 // Function Bodies
 
 // Write Formatted
-int WRITE_FORMATTED(void)
+int WRITE_FORMATTED(char *m_array)
 {
-    fwrite(transfer_buffer, 1, strlen(transfer_buffer), fp_FORMATTED);
+    fwrite(m_array, 1, strlen(m_array), fp_FORMATTED);
     return 0;
 }
 
@@ -122,11 +121,9 @@ int CLOSE_ORIGINAL()
 }
 
 
-int Read_ORIGINAL(int chars_to_read)
+int Read_ORIGINAL(char *m_Array, int chars_to_read)
 {
-   fread(transfer_buffer, 1, chars_to_read , fp_ORIGINAL);
-
-//   printf("\n\n%s", transfer_buffer);
+   fread(m_Array, 1, chars_to_read , fp_ORIGINAL);
 
 }
 

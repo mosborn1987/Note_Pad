@@ -6,17 +6,37 @@
 #include <data_handler.h>
 #include <User_Interface_Functions.h>
 
+/* Stages */
+int  stages(void);
+int  stage_1(void);
+int  stage_2(void);
+void stage_3(void);
+int  stage_clean_up(void);
+
+/* Stages */
+int  stages(void)
+{
+    // Request WR Number and Open Existing file
+    stage_1();
+    stage_2();
+
+    // Stage_3
+    stage_3();
+
+    stage_clean_up();
+}
 /* Stage 3: Obtain and Transfer WR Number and Revision Number
 */
-void stage_3(void);
-
 void stage_3(void)
 {
     // Get WR Number
-    get_WR_number(transfer_buffer);
-//    printf("%s\n\n", transfer_buffer);
+    get_WR_number(temp_data_buffer);
 
     // Transfer WR Number
+    WRITE_FORMATTED("WR #: ");
+    WRITE_FORMATTED(temp_data_buffer);
+    WRITE_FORMATTED("\n");
+//    WRITE_FORMATTED(temp_data_buffer);
 
     // Get Revision Number
 
@@ -25,12 +45,9 @@ void stage_3(void)
 
 }
 
-
 /* Stage Clean up:
     - Closes both file pointers
 */
-int stage_clean_up(void);
-
 int stage_clean_up(void)
 {
     // Close Original
@@ -48,8 +65,6 @@ int stage_clean_up(void)
     - Create a new Formatted file
     - Place that in the 'Formatted' folder
 */
-int stage_2(void);
-
 int stage_2(void)
 {
     // Create a new folder using the WR Number Array
@@ -59,15 +74,12 @@ int stage_2(void)
     return 0;
 }
 
-
 /* Stage 1:
     - Request WR From User
     - Verify that the WR Number file exists
         - If so move ahead to Stage 2
         - Else re-request WR Number from user.
 */
-int stage_1(void);
-// Stage 1
 int stage_1(void)
 {
     // Request WR From User
@@ -86,11 +98,8 @@ int stage_1(void)
 
         // Attempt to Open File Location
         Open_Status = OPEN_ORIGINAL();
-
     }
-
     return 0;
-
 }
 
 

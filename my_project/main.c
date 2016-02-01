@@ -1,15 +1,8 @@
-#include <program_manager.h>
+#include <Stages.h>
 
 int main()
 {
-    // Request WR Number and Open Existing file
-    stage_1();
-    stage_2();
-
-    // Stage_3
-    stage_3();
-
-    stage_clean_up();
+    stages();
 
 
    return(0);

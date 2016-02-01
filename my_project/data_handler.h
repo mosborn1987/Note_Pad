@@ -3,6 +3,10 @@
 
 #include <file_handler.h>
 
+// Temp Data Buffers
+char temp_data_buffer[256];
+char temp_data_buffer_2[256];
+
 int get_WR_number(char *mm_buffer);
 int get_WR_number(char *mm_buffer)
 {
