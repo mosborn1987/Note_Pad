@@ -2,7 +2,7 @@
 
 int main()
 {
-    stages();
+    stage_manager();
 
 
    return(0);

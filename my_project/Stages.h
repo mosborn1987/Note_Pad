@@ -7,14 +7,14 @@
 #include <User_Interface_Functions.h>
 
 /* Stages */
-int  stages(void);
+int  stage_manager(void);
 int  stage_1(void);
 int  stage_2(void);
 void stage_3(void);
 int  stage_clean_up(void);
 
 /* Stages */
-int  stages(void)
+int  stage_manager(void)
 {
     // Request WR Number and Open Existing file
     stage_1();
