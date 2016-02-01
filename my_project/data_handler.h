@@ -15,8 +15,8 @@ char special_char_set[] = "(\/).";
 char char_collection[256];
 
 // These are the two functions that are needed.
-int get_append_after_specified_string(dest, src, string_array);
-int get_first_string(dst, srd, char_set);
+int get_append_after_specified_string(char *dest, char *src, char *string_array);
+int get_first_string(char *dst, char *srd, char *char_set);
 
 int get_WR_number(char *mm_buffer)
 {
