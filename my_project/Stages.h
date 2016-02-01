@@ -20,7 +20,7 @@ int  stage_manager(void)
     stage_1();
     stage_2();
 
-    // Stage_3
+    // Stage_3: Transfer Criteria
     stage_3();
 
     stage_clean_up();
@@ -36,12 +36,17 @@ void stage_3(void)
     WRITE_FORMATTED("WR #: ");
     WRITE_FORMATTED(temp_data_buffer);
     WRITE_FORMATTED("\n");
-//    WRITE_FORMATTED(temp_data_buffer);
 
     // Get Revision Number
+    Get_Next_Line_ORIGINAL(temp_data_buffer);
 
     // Transfer Revision Number
+    WRITE_FORMATTED(temp_data_buffer);
 
+    skip_n_lines(fp_ORIGINAL, 3);
+    Get_Next_Line_ORIGINAL(temp_data_buffer);
+    printf("Three Lines Skipped: %s", temp_data_buffer);
+    WRITE_FORMATTED(temp_data_buffer);
 
 }
 

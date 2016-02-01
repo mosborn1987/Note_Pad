@@ -41,6 +41,27 @@ void stitch_file_directories();
 //                and ending at the '\n' char.
 int get_next_line(FILE *fp, char *m_buffer_array);
 
+// Go to Next Line
+void skip_n_lines(FILE *m_fp, int n_lines);
+
+/* Get Next Line
+*/
+void skip_n_lines(FILE *m_fp, int n_lines)
+{
+    int m_i = 0;
+
+    for(m_i=0; m_i<n_lines; m_i++)
+    {
+        int temp_c = 'A';
+
+        while((temp_c!='\n')&&(temp_c!=EOF))
+        {
+            temp_c = fgetc(m_fp);
+        }
+    }
+}
+
+
 int get_next_line(FILE *fp, char *m_buffer_array)
 {
     // Local Variable(s)
