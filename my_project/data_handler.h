@@ -17,8 +17,9 @@ void find_string(char *mm_buffer)
     // Rewind fp_ORIGINAL
 
     // Read first line of code
-    Get_Next_Line_ORIGINAL(mm_buffer);
+    int line_length = Get_Next_Line_ORIGINAL(mm_buffer);
 
+    // Test String
     char test_string[256] = "WR #: ";
     int test_string_length = strlen(test_string);
     printf("\nTest String Length: %d\n", test_string_length);
