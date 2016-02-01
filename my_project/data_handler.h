@@ -23,9 +23,11 @@ void find_string(char *mm_buffer)
     char test_string[256] = "WR #: ";
     int test_string_length = strlen(test_string);
     printf("\nTest String Length: %d\n", test_string_length);
+
+    // Buffer
     char temp_data_buffer[50];
 
-
+    // Point to location of string
     char *p_char;
     p_char = strstr(transfer_buffer, test_string);
 
@@ -33,13 +35,14 @@ void find_string(char *mm_buffer)
 
     // String Span
     char n_set[] ="1234567890";
-    int wr_string_span = 7;// = strspn(transfer_buffer, n_set);
+    int wr_string_span = strcspn(transfer_buffer, n_set);
     printf("\nWR String Span: %d\n", wr_string_span);
 
     // Copy over the charachters
-    strncpy(temp_data_buffer, p_char, test_string_length+wr_string_span);
+    strncpy(temp_data_buffer, p_char+test_string_length, line_length-wr_string_span);
+//    temp_data_buffer[line_length-wr_string_span] = '\0';
 
-    printf("\nThis Should Work:\n%s\n",temp_data_buffer);
+    printf("\nThis Should Work:\n%s",temp_data_buffer);
 
     printf("\np_char = %c", p_char[0]);
 //    printf("\n p_char = %d", p_char[0]);
