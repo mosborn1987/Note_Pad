@@ -18,6 +18,28 @@ char char_collection[256];
 int get_append_after_specified_string(char *dest, char *src, char *string_array);
 int get_first_string(char *dst, char *srd, char *char_set);
 
+// This function will retrieve all the remaining/appending string
+// following a specified string.
+int get_append_after_specified_string(char *dest, char *src, char *string_array)
+{
+    // Get length of src
+    int src_length = strlen(src);
+
+    // Get Length of string_array
+    int str_length = strlen(string_array);
+
+    // Create a pointer to location
+    char *p_string;
+    p_string = strstr(src, string_array);
+
+    // strncpy over the appending string to dest
+    strncpy(dest, p_string + str_length, src_length - str_length);
+
+    return 0;
+
+}
+
+
 int get_WR_number(char *mm_buffer)
 {
     // Rewind fp_ORIGINAL
@@ -44,6 +66,5 @@ int get_WR_number(char *mm_buffer)
     return 0;
 
 }
-
 
 #endif // DATA_HANDLER_H_INCLUDED

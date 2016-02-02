@@ -22,10 +22,10 @@ int  stage_manager(void)
     stage_2();
 
     // Stage_3: Transfer Criteria
-    stage_3();
+//    stage_3();
 
 
-    stage_clean_up();
+//    stage_clean_up();
 }
 
 /* Stage 4: Transfer Engine
