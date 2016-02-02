@@ -45,23 +45,14 @@ int get_WR_number(char *mm_buffer)
     // Rewind fp_ORIGINAL
     rewind(fp_ORIGINAL);
 
-    // Read first line of code
-    int line_length = Get_Next_Line_ORIGINAL(mm_buffer);
+    // Local Buffer
+    char Local_buffer[256];
 
-    // Test String
-    char test_string[256] = "WR #: ";
-    int test_string_length = strlen(test_string);
+    // Read next line of text
+    get_next_line(fp_ORIGINAL, Local_buffer);
 
-    // Point to location of string
-    char *p_char;
-    p_char = strstr(mm_buffer, test_string);
-
-    // String Span
-    int wr_string_span = strcspn(mm_buffer, number_set);
-
-    // Copy over the characters
-    strncpy(mm_buffer, p_char+test_string_length, line_length-wr_string_span);
-    mm_buffer[line_length-wr_string_span] = '\0';
+    // Retrieve WR Number
+    get_append_after_specified_string(mm_buffer, Local_buffer, "WR #: ");
 
     return 0;
 
