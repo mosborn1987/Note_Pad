@@ -9,17 +9,7 @@
 void UI_Request_WR_Number(void);
 void UI_Re_Request_WR_Number(void);
 
-// Terminal
-void clear_terminal(void);
 
-// Prototype declaration
-
-// Terminal
-void clear_terminal(void)
-{
-    system("cls");
-
-}
 
 // Request WR Number from user
 void UI_Request_WR_Number(void)

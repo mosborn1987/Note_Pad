@@ -44,6 +44,7 @@ int get_append_after_specified_string(char *dest, char *src, char *string_array)
         strncpy(dest, p_string + str_length, src_length - str_length);
         return 1;
     }
+
 }
 
 
