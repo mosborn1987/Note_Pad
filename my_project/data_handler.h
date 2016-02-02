@@ -18,6 +18,7 @@ char char_collection[256];
 int get_append_after_specified_string(char *dest, char *src, char *string_array);
 int get_first_string(char *dst, char *srd, char *char_set);
 
+
 // This function will retrieve all the remaining/appending string
 // following a specified string.
 int get_append_after_specified_string(char *dest, char *src, char *string_array)
@@ -32,11 +33,17 @@ int get_append_after_specified_string(char *dest, char *src, char *string_array)
     char *p_string;
     p_string = strstr(src, string_array);
 
-    // strncpy over the appending string to dest
-    strncpy(dest, p_string + str_length, src_length - str_length);
+    // If string was not found
+    if(p_string == NULL)
+    {
+        return NULL;
+    }
 
-    return 0;
-
+    else if(p_string !=NULL)
+    {
+        strncpy(dest, p_string + str_length, src_length - str_length);
+        return 1;
+    }
 }
 
 
@@ -51,8 +58,9 @@ int get_WR_number(char *mm_buffer)
     // Read next line of text
     get_next_line(fp_ORIGINAL, Local_buffer);
 
+    int test_char = 0;
     // Retrieve WR Number
-    get_append_after_specified_string(mm_buffer, Local_buffer, "WR #: ");
+    test_char = get_append_after_specified_string(mm_buffer, Local_buffer, "WR #: ");
 
     return 0;
 
